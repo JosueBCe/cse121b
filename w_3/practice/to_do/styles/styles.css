@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+  --main-color: cornflowerblue;
+  --bck-color: lightblue;
+  --padding: 0.5em 1.5em;
+  --border-r: 5px;
+}
+
+
+
+body {
+  display: grid; 
+  grid-template-columns: 1fr ;
+  grid-template-rows: 100px 150px 1fr;
+  justify-items: center;
+  font-family: "Roboto Mono", sans-serif;
+  background-image: url(/to_do/styles/background.jpeg);
+}
+
+
+section {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+button {
+  border: solid 0.5px var(--main-color);
+  border-radius: var(--border-r);
+  padding: var(--padding);
+  font-family: "Roboto Mono";
+  background-color: var(--bck-color) ;
+  height: 40px;
+  width: 40%;
+}
+
+label {
+  font-size: large; 
+  
+  }
+
+
+#todo {
+  border: solid 0.5px var(--main-color);
+  border-radius: var(--border-r);
+  padding: 0;
+  margin: 0em 0.5em;
+  font-family: "Roboto Mono";
+  height: 40px;
+  width: 70%;
+}
+
+.todos {
+    width: 70%;
+    padding-left: 0rem ;
+  }
+  .todos > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 0.5px var(--main-color);
+    padding: .5em;
+    margin: 0.2em auto;
+    background-color: var(--bck-color);
+    border-radius: var(--border-r);
+    max-width: 300px;
+  }
+  .todos p {
+    margin: 0;
+  }
+  .todos span {
+    cursor: pointer;
+  }
+  .strike {
+    text-decoration: line-through;
+    color: gray;
+  }
