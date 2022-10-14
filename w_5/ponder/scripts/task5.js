@@ -74,10 +74,38 @@ let templeUrl = "https://byui-cse.github.io/cse121b-course/week05/temples.json"
 
 // Step 5: Convert your fetch response into a Javascript object ( hint: .json() ). Store this in the templeList variable you declared earlier (Step 1). Make sure the the execution of the code waits here as well until it finishes.
 // Step 6: Finally, call the output function and pass it the list of temples. Execute your getTemples function to make sure it works correctly.
-let temple = null
+async function  getTemples(url){
+    let res = await fetch(url)
+    if (res.ok) {
+        const templeData = await res.json()
+        sortBy(templeData)
+    }
+}
+
+const sortBy = (arr) => {
+    outputHtml = document.querySelector("#temples")
+    reset()
+    let templeOutput = output(arr)
+/*     outputHtml.innerHTML += templeOutput; */
+
+    let select = document.querySelector("#sortBy")
+    select.addEventListener("change", () => {    
+        
+        let value = select.options[select.selectedIndex].value;
+        if (value == "templeNameDescending"){
+            outputHtml.innerHTML = sortTemples(templeOutput,"Asc")
+        } else {
+              
+             outputHtml.innerHTML = sortTemples(templeOutput)
+        }
+        })
+}
+
+const reset = () => {
+    document.querySelector('#temples').innerHTML= ""
+} 
 
 const output = (arr) => {
-    outputHtml = document.querySelector("#temples")
     temple = arr.map(e =>
         `<article> 
     <h3>${e.templeName}</h3>  
@@ -86,33 +114,19 @@ const output = (arr) => {
     <img src=${e.imageUrl} alt="${e.attribute}"">
     </article> 
     `)
-  
-    outputHtml.innerHTML += temple;
-    
-    document.querySelector("#sortBy").addEventListener("change", () => {    
-        let select = document.getElementById('sortBy');
-        let value = select.options[select.selectedIndex].value;
-        
-        if (value == "templeNameDescending"){
-            outputHtml.innerHTML = sortTemples(temple,"Asc")
-        } else {
-             outputHtml.innerHTML = sortTemples(temple)
-        }
-        })
-
+    return temple
 }
 
-document.querySelector("#temples").addEventListener("click", function() {
-
-})
-
-async function  getTemples(url){
-    let res = await fetch(url)
-    if (res.ok) {
-        const templeData = await res.json()
-        output(templeData)
+const sortTemples = (list, option) => {
+    if (option == "Asc"){
+         let sortedList = list.sort(compareAsc);
+        return sortedList;
+    } else {
+        let sortedList = list.sort(compareDesc);
+        return sortedList;
     }
 }
+
 
 const compareAsc = (a, b) => {
     let num = 0
@@ -128,15 +142,6 @@ const compareDesc = (a, b) => {
     return num
 }
 
-const sortTemples = (list, option) => {
-    if (option == "Asc"){
-         let sortedList = list.sort(compareAsc);
-        return sortedList;
-    } else {
-        let sortedList = list.sort(compareDesc);
-        return sortedList;
-    }
-}
 
 
 
@@ -147,9 +152,7 @@ getTemples(templeUrl)
 
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
 
-/* const reset = () => {
-    document.querySelector('#temples').remove();
-} */
+
 
 // Step 8: Declare a function named sortBy that does the following:
 // - Calls the reset function
