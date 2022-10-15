@@ -86,7 +86,7 @@ const sortBy = (arr) => {
     outputHtml = document.querySelector("#temples")
     reset()
     let templeOutput = output(arr)
-/*     outputHtml.innerHTML += templeOutput; */
+    outputHtml.innerHTML += templeOutput;
 
     let select = document.querySelector("#sortBy")
     select.addEventListener("change", () => {    
