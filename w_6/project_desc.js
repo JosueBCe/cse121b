@@ -2,7 +2,7 @@
 =============  Description of Project ==================
 Describe your project idea. What will be built? What will it do? etc.
 
-My Project will be a website that fetch data from a e-commerce API.
+My Project will be a website that fetch data from a e-commerce API. (https://fakestoreapi.com/)
 It will display the price, a catalog image, description of the product and another 
 product's characterisits. 
 It will be possible to sort by name order and it will filter about the kind of product
@@ -36,5 +36,5 @@ the requirement for use of fetch, objects, modules, or array functions.
             2) order the output 
             3) Make the output of the filtered list.
         4) Some functions will use await and async funtionallity. 
-        5)  
+        5) I will strech with some functionality extra ( it's a surprise )
 */
