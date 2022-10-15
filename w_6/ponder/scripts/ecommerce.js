@@ -107,15 +107,26 @@ const reset = () => {
 
 const output = (arr) => {
     temple = arr.map(e =>
-        `<article> 
-    <h3>${e.title}</h3>  
-    <h4>Price ${e.price}</h4>
-    <h4>${e.description}</h4>
-    <img src=${e.image} alt="${e.attribute}"">
-    </article> 
+        
+        ` <div> 
+        <h3>${e.title}</h3>  
+        <h4>Price ${e.price}</h4>
+        <h4>${e.description}</h4>
+        <img src=${e.image} alt="${e.attribute}"">
+                        
     `)
     return temple
 }
+
+/*     <div>
+                                <ul>
+                                   <li>${data.charact}</li> 
+                                    <li>${data.charact}</li> 
+                                    <li>${data.charact}</li> 
+                                    <li>${data.charact}</li> 
+                                </ul>
+                            </div>
+                        </div> */
 
 const sortTemples = (list, option) => {
     if (option == "Asc"){
