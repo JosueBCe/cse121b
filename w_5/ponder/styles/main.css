@@ -1,6 +1,9 @@
 /* HTML Selectors */
 article {
     margin: 10px;
+    border: solid 1px gray;
+    padding: 1em;
+    margin: 0 auto;
 }
 
 body {
@@ -12,8 +15,21 @@ div {
     text-align: center;
 }
 
+
+h3 , h4 {
+    background-color: rgb(51, 114, 197);
+    color: white;
+    margin: 1em 30px;
+    border-radius: .3em;
+}
+
+#message1 {
+    font-size: 30px;
+    padding: .3em;
+  
+}
 footer {
-    background-color: gray;
+    background-color: rgb(70, 181, 218);
     color: white;
     padding: 5px;
     text-align: center;
@@ -26,6 +42,7 @@ header {
 
 img {
     width: 80%;
+    border-radius: .5em;
 }
 
 label {
@@ -39,7 +56,7 @@ main {
 }
 
 nav {
-    background-color: black;
+    background-color: rgb(70, 181, 218);
     color: white;
 }
 
@@ -118,10 +135,6 @@ section {
     nav ul li {
         display: inline;
         margin: 0 10px;
-    }
-
-    #temples {
-        grid-template-columns: 1fr 1fr;
     }
 }
 
