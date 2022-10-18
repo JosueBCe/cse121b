@@ -18,37 +18,54 @@
             <li><a href="#">Lesson 2</a></li>
             <li><a href="#">Lesson 3</a></li>
             <li><a href="#">Lesson 4</a></li>
-            <li><a href="#" class="active">Lesson 5</a></li>
+            <li><a href="#" >Lesson 5</a></li>
+            <li><a href="#" class="active">Lesson 6</a></li>
         </ul>
     </nav>
     <header>
-        <h1>Controlling Your Code</h1>
+        <h1>W E-COMMERCE </h1>
     </header>
     <main>
         <section>
             <h2>
-                Today is <span id="message2"></span>.
+                Always is a good time to be on <span id="message2"></span>.
             </h2>
             <h3>
                 <span id="message1"></span>
             </h3>
         </section>
         <hr>
-        <section>
-            <h2>Temples in Utah</h2>
+        <h2>This is our Catalog</h2>
+        <section class="catalog">
+            <p>
+                Order by Category: 
+                <select id="OrderByCategory">
+                     <option value="electronics">Electronics</option>
+                    <option value="jewelery">Jewelery</option>
+                    <option value="men's clothing">Men's clothing</option>
+                    <option value="women's clothing">Women's clothing</option>
+                    
+                </select>
+            </p>
             <p>
                 Sort by: 
                 <select id="sortBy">
-                    <option value="templeNameAscending">Temple Name Ascending</option>
-                    <option value="templeNameDescending">Temple Name Descending</option>
+                    <option value="nameAscending">Name Ascending</option>
+                    <option value="nameDescending">Name Descending</option>
                 </select>
             </p>
-            <div id="temples">
+            <p>
+                Order by Price: 
+                <input type="text" id="min" placeholder="min" value="20">
+                <input type="text" id="max" placeholder="max" value="70">
+                <button type="submit" id="searchproduct">show</button>
+            </p>
+            <div id="catalog">
             </div>
         </section>
     </main>
     <footer>
-        &copy;<span id="year"></span> | Controlling Your Code | Lesson 5
+        &copy;<span id="year"></span> | W E-COMMERCE | Lesson 6
     </footer>
     <script src="scripts/main.js"></script>
     <script src="scripts/ecommerce.js"></script>
