@@ -1,19 +1,42 @@
 /* HTML Selectors */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono:wght@300;400&display=swap');
+:root {
+    --main-color: #3D5A80;
+    --constrast-color: #FFB703;
+    --dark-main-color: #023047;
+    --light-main-color:#8ECAE6;
+}
+
 article {
     margin: 10px;
 }
 
 body {
-    font-family: 'Kalam', cursive;
+    font-family: 'Roboto Mono','Open Sans', cursive;
 }
 
 div {
     margin: 10px;
     text-align: center;
+    justify-items: center;
+}
+
+.order-by-price {
+    display: grid;
+}
+
+input, select, button {
+    margin: .5em;
+    padding: .4em;
+    color: var(--dark-main-color);
+    text-align: center;
+    font-size: 15px;
+    border-radius: .3em;
+    border: solid 1px var(--light-main-color);
 }
 
 footer {
-    background-color: gray;
+    background-color: var(--constrast-color);
     color: white;
     padding: 5px;
     text-align: center;
@@ -23,16 +46,24 @@ header {
     margin: auto;
     text-align: center;
 }
+.product-image {
+    margin: 1em auto;
+}
 
 .product-image img {
     width: 50%;
-    border: solid 1px lightblue;
+    border: solid 1px var(--light-main-color);
     padding: 2em;
+    border-radius: .5em;
 }
 
 .product-description {
-    background-color: lightblue;
-    padding: 1em;
+    background-color: var(--dark-main-color);
+    color: white;
+    padding: 1em 2em;
+    font-size: 12.5px;
+    border-radius: .5em;
+    text-align: left;
 }
 
 label {
@@ -43,10 +74,15 @@ label {
 
 main {
     text-align: center;
+    padding: 1em auto;
 }
 
 nav {
     background-color: black;
+    color: white;
+}
+nav {
+    background-color: var(--main-color);
     color: white;
 }
 
@@ -76,7 +112,7 @@ nav ul li a {
     text-decoration: none;
 }
 nav ul li a:hover {
-    background-color: #efefef;
+    background-color: var(--light-main-color);
     color: black;
 }
 
@@ -84,6 +120,10 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    background-color: var(--main-color);
+    color: white;
+    border-radius: .5em;
+    margin: 0em 2em;
 }
 
 
@@ -105,6 +145,13 @@ section {
     display: inline-block;
     text-align: left;
     vertical-align: top;
+}
+
+
+.catalog {
+    font-size: 13px;
+    margin: 0 auto;
+    max-width: 400px;
 }
 
 #temples {

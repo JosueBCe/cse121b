@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSE 121b: Week 05 | Sample Solution</title>
     <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
 </head>
 
 <body>
@@ -18,7 +20,7 @@
             <li><a href="#">Lesson 2</a></li>
             <li><a href="#">Lesson 3</a></li>
             <li><a href="#">Lesson 4</a></li>
-            <li><a href="#" >Lesson 5</a></li>
+            <li><a href="#">Lesson 5</a></li>
             <li><a href="#" class="active">Lesson 6</a></li>
         </ul>
     </nav>
@@ -37,32 +39,32 @@
         <hr>
         <h2>This is our Catalog</h2>
         <section class="catalog">
-            <p>
-                Order by Category: 
+            <div>
+                Order by Category:
                 <select id="OrderByCategory">
-                     <option value="electronics">Electronics</option>
+                    <option value="electronics">Electronics</option>
                     <option value="jewelery">Jewelery</option>
                     <option value="men's clothing">Men's clothing</option>
                     <option value="women's clothing">Women's clothing</option>
-                    
+
                 </select>
-            </p>
-            <p>
-                Sort by: 
+            </div>
+            <div>
+                Sort by:
                 <select id="sortBy">
                     <option value="nameAscending">Name Ascending</option>
                     <option value="nameDescending">Name Descending</option>
                 </select>
-            </p>
-            <p>
-                Order by Price: 
+            </div>
+            <div class="order-by-price">
+                Order by Price:
                 <input type="text" id="min" placeholder="min" value="20">
                 <input type="text" id="max" placeholder="max" value="70">
-                <button type="submit" id="searchproduct">show</button>
-            </p>
-            <div id="catalog">
+                <button type="submit" id="searchproduct">Search</button>
             </div>
         </section>
+        <div id="catalog">
+        </div>
     </main>
     <footer>
         &copy;<span id="year"></span> | W E-COMMERCE | Lesson 6

@@ -1,0 +1,14 @@
+@media screen and (min-width: 64em) {
+    body {
+        max-width: 1100px;
+        margin: 0em auto
+    }
+    .catalog {
+        display: -webkit-inline-box;
+        max-width: none;
+    }
+    /* .product-image img {
+    width: 70%;
+
+} */
+}

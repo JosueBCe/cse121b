@@ -48,18 +48,18 @@ async function getJson(url) {
 async function main() {
     let outputHtml = document.querySelector("#catalog")
     let jsondata = await getJson(apiUrl)
-    
+
     // 2) display data
     outputHtml.innerHTML = output(jsondata)
 
     // 3) sort data 
-   /*  sortByBtn.addEventListener("change", () => {
-        console.log(jsondata)
-        outputHtml.innerHTML = output(sortBy(jsondata))
-    }) */
+    /*  sortByBtn.addEventListener("change", () => {
+         console.log(jsondata)
+         outputHtml.innerHTML = output(sortBy(jsondata))
+     }) */
     // 4) filter data by price
     searchProduct.addEventListener("click", () => {
-        let data = jsondata 
+        let data = jsondata
         // 3) sort data 
         data = sortBy(data)
         // 4) filter data by Price
@@ -68,7 +68,7 @@ async function main() {
         data = filterByCategory(data)
         // Render Updated Data to the HTML 
         console.log(data)
-        data.length > 0 ?  outputHtml.innerHTML = output(data) : outputHtml.innerHTML = "We don't have products for this search"
+        data.length > 0 ? outputHtml.innerHTML = output(data) : outputHtml.innerHTML = "We don't have products for this search"
     })
 
 }
@@ -80,15 +80,15 @@ const filterByCategory = (data) => {
     return category
 }
 
- 
+
 const filterByPrice = (data) => {
-    reset()  
+    reset()
     const minPrice = Number(document.getElementById('min').value);
     const maxPrice = Number(document.getElementById('max').value);
     if (maxPrice > minPrice) {
-        return data.filter(e => e.price >= minPrice && e.price <= maxPrice );
-    }else {
-        return data.filter(e => e.price >= minPrice )
+        return data.filter(e => e.price >= minPrice && e.price <= maxPrice);
+    } else {
+        return data.filter(e => e.price >= minPrice)
     }
 }
 
@@ -144,7 +144,8 @@ const output = (arr) => {
         <h4>${e.description}</h4>
         <h4> Rating: ${e.rating.rate}</h4>
         </div>
-    `)
+    `).toString()
+    .replaceAll(",", " ")
     return html
 }
 
