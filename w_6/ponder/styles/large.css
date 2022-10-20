@@ -6,6 +6,9 @@
     .catalog {
         display: -webkit-inline-box;
         max-width: none;
+        -webkit-box-align: center;
+        padding: 1em;
+        font-size: 15px;
     }
     /* .product-image img {
     width: 70%;
