@@ -154,6 +154,8 @@ const output = (arr) => {
 
 main()
 
+
+/* ====================== REMAINING ======================== */
 /*     <div>
                                 <ul>
                                    <li>${data.charact}</li> 
@@ -171,8 +173,6 @@ CLOTHE
 DIV => category 
 div => image div => Description  
 */
-
-
 /* 
 (0) fetch data 
 1)  Put data in an arrray
