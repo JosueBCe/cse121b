@@ -13,13 +13,27 @@ if (day >= 1 && day <= 5) {
 let message2 = ""
 
 switch (day) {
-    case 0: message2 = 'Sunday'; break;
-    case 1: message2 = 'Monday'; break;
-    case 2: message2 = 'Tuesday'; break;
-    case 3: message2 = 'Wednesday'; break;
-    case 4: message2 = 'Thursday'; break;
-    case 5: message2 = 'Friday'; break;
-    case 6: message2 = 'Saturday'; break;
+    case 0:
+        message2 = 'Sunday';
+        break;
+    case 1:
+        message2 = 'Monday';
+        break;
+    case 2:
+        message2 = 'Tuesday';
+        break;
+    case 3:
+        message2 = 'Wednesday';
+        break;
+    case 4:
+        message2 = 'Thursday';
+        break;
+    case 5:
+        message2 = 'Friday';
+        break;
+    case 6:
+        message2 = 'Saturday';
+        break;
 }
 
 console.log(message2)
@@ -44,7 +58,7 @@ async function getJson(url) {
     let data = await response.json()
     return data;
 }
-
+/* ====================== MAIN FUNCTION =================================== */
 async function main() {
     let outputHtml = document.querySelector("#catalog")
     let jsondata = await getJson(apiUrl)
@@ -52,15 +66,10 @@ async function main() {
     // 2) display data
     outputHtml.innerHTML = output(jsondata)
 
-    // 3) sort data 
-    /*  sortByBtn.addEventListener("change", () => {
-         console.log(jsondata)
-         outputHtml.innerHTML = output(sortBy(jsondata))
-     }) */
-    // 4) filter data by price
+    // WHEN USER CLICKS THE SEARCH BUTTON: 
     searchProduct.addEventListener("click", () => {
         let data = jsondata
-        // 3) sort data 
+        // 3) sort data (name ascending/descending)
         data = sortBy(data)
         // 4) filter data by Price
         data = filterByPrice(data)
@@ -74,12 +83,16 @@ async function main() {
 }
 
 
+/* ================= FILTER PRODUCTS BY CATEGORY ======================= */
+
 const filterByCategory = (data) => {
     let value = orderByCategory.options[orderByCategory.selectedIndex].value;
     let category = data.filter(e => e.category == value)
     return category
 }
 
+
+/* ================= FILTER PRODUCTS BY PRICE MIN/MAX ====================*/
 
 const filterByPrice = (data) => {
     reset()
@@ -91,6 +104,9 @@ const filterByPrice = (data) => {
         return data.filter(e => e.price >= minPrice)
     }
 }
+
+
+/* =================== SORT PRODUCTS: NAME DESC/ASCEND ====================*/
 
 const sortBy = (arr) => {
     reset()
@@ -112,6 +128,10 @@ const sortProducts = (list, option) => {
     }
 }
 
+/* It's part in the process of sorting data in Ascending order (used to sort data in name descending )
+with the sortProducts function
+*/
+
 const compareAsc = (a, b) => {
     let num = 0
     let a1 = a.title.toLowerCase();
@@ -119,6 +139,10 @@ const compareAsc = (a, b) => {
     a1 < b1 ? num = 1 : a1 > b1 ? num = -1 : num = 0
     return num
 }
+
+/* It's part in the process of sorting data in Descending order (used to sort data in name descending )
+with the sortProducts function
+*/
 
 const compareDesc = (a, b) => {
     let num = 0
@@ -129,13 +153,15 @@ const compareDesc = (a, b) => {
     return num
 }
 
+/* ================ RESET THE VALUE OF THE #CATALOG (HTML) ================================*/
 const reset = () => {
     document.querySelector('#catalog').innerHTML = ""
 }
 
+/* ======================== OUTPUT: STRUCTURES DATA IN A HTML FORM ================================== */
 const output = (arr) => {
     html = arr.map(e =>
-        `<div class="product-image">
+            `<div class="product-image">
         <img src=${e.image} alt="${e.attribute}"">
         </div>
         <div class="product-description"> 
@@ -145,14 +171,18 @@ const output = (arr) => {
         <h4> Rating: ${e.rating.rate}</h4>
         </div>
     `).toString()
-    .replaceAll(",", " ")
+        .replaceAll(",", " ")
     return html
 }
 
-
-
-
+/* CALLING MAIN FUNCTION */
 main()
+
+
+
+<<<<<<< HEAD
+
+
 
 
 /* ====================== REMAINING ======================== */
@@ -166,6 +196,7 @@ main()
                             </div>
                         </div> */
 
+/* ======================= COMMENTS AND PLANNING =================================== */
 /* STRUCTURE 
 TECHNOLOGY 
 ACCESSORIES
@@ -183,5 +214,3 @@ div => image div => Description
     fitler category 
     outputHtml
  */
-
-
