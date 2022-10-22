@@ -161,7 +161,7 @@ const reset = () => {
 /* ======================== OUTPUT: STRUCTURES DATA IN A HTML FORM ================================== */
 const output = (arr) => {
     html = arr.map(e =>
-            `<div class="product-image">
+        `<div class="product-image">
         <img src=${e.image} alt="${e.attribute}"">
         </div>
         <div class="product-description"> 
@@ -177,11 +177,6 @@ const output = (arr) => {
 
 /* CALLING MAIN FUNCTION */
 main()
-
-
-
-<<<<<<< HEAD
-
 
 
 
